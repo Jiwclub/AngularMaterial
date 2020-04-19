@@ -1,0 +1,147 @@
+<!-- <router-outlet></router-outlet> -->
+<div>
+    <button mat-button>Click me!</button>
+    <button mat-raised-button>Click me!</button>
+    <button mat-flat-button>Click me!</button>
+    <button mat-stroked-button>Click me!</button>
+</div>
+
+<div>
+    <button mat-icon-button>Icon</button>
+    <button mat-fab>Fab</button>
+    <button mat-mini-fab>Minifab</button>
+</div>
+
+<div>
+    <button color="Primary" mat-button>Primary</button>
+    <button color='accent' mat-button>Accent</button>
+    <button color='warn' mat-button>Click me!</button>
+    <button color="Primary" mat-raised-button>Primary</button>
+    <button color='accent' mat-raised-button>Accent</button>
+    <button color='warn' mat-raised-button>Click me!</button>
+</div>
+
+<!-- Button Toggle -->
+
+<div>
+    <mat-button-toggle #toggleBtb>Toggle</mat-button-toggle>
+    {{toggleBtb.checked}}
+</div>
+
+<div>
+    <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="react">React</mat-button-toggle>
+        <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup.value}}
+</div>
+
+<!-- icon -->
+<div>
+    <mat-icon color="primary">grade</mat-icon>
+</div>
+
+<!-- Badges -->
+<div>
+    <span matBadge="5">Notification</span>
+    <p>
+        <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+    </p>
+</div>
+<!-- Progress Spinner -->
+<div>
+    <!-- <mat-progress-spinner value="40"></mat-progress-spinner> -->
+    <mat-spinner *ngIf="showSpiner" color="accent"></mat-spinner>
+    <button (click)="loadData()">Load Data</button>
+</div>
+
+<!-- Navbar -->
+<div>
+
+    <mat-toolbar color="primary" class="navbar">
+        <div>Codevolution</div>
+        <div>
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+        </div>
+    </mat-toolbar>
+
+</div>
+
+<!-- Sidenavbar -->
+<div>
+    <mat-sidenav-container class="">
+        <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">Sidebar
+        </mat-sidenav>
+        <mat-sidenav-content>Main
+            <button (click)="opened=!opened">Toggle Opened</button>
+            <button (click)="sidenav.open()">Open</button>
+            <button (click)="sidenav.close()">Close</button>
+            <button (click)="sidenav.toggle()">Toggle</button>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+<!-- Menus -->
+
+<div>
+    <mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+        <button mat-menu-item [matMenuTriggerFor]="subMebu">FrontEnd</button>
+        <button mat-menu-item>BackEnd</button>
+    </mat-menu>
+    <button class="center" mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+
+    <mat-menu #subMebu="matMenu">
+        <button mat-menu-item>Angular</button>
+        <button mat-menu-item>React</button>
+        <button mat-menu-item>Vue</button>
+    </mat-menu>
+
+    <mat-menu #lazyMenu="matMenu">
+        <ng-template matMenuContent let-name="name" let-hobby="hobby">
+            <button mat-menu-item>Setting</button>
+            <button mat-menu-item>Hobby is {{hobby}}</button>
+            <button mat-menu-item>Log out {{name}}</button>
+        </ng-template>
+
+    </mat-menu>
+    <button mat-raised-button [matMenuTriggerData]="{name: 'Vishwas', hobby: 'football'}"
+        [matMenuTriggerFor]="lazyMenu">Vishwas</button>
+    <button mat-raised-button [matMenuTriggerData]="{name: 'Codevolution',hobby: 'teaching'}"
+        [matMenuTriggerFor]="lazyMenu">Codevolution</button>
+</div>
+
+<!-- Lists -->
+<div>
+    <mat-list>
+        <mat-list-item>
+            <mat-icon matListIcon>home</mat-icon>
+            <h3 matLine>Heading</h3>
+            <p matLine>Line</p>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+            <mat-icon matListIcon>folder</mat-icon>
+            <h3 matLine>Heading 2</h3>
+            <p matLine>Line 2</p>
+        </mat-list-item>
+    </mat-list>
+
+    <!-- <mat-list dense>
+      <mat-list-item>Item1</mat-list-item>
+      <mat-list-item>Item2</mat-list-item>
+      <mat-list-item>Item3</mat-list-item>
+    </mat-list>
+  
+    <mat-nav-list>
+  
+      <a mat-list-item href="#">Home</a>
+      <a mat-list-item href="#">About</a>
+      <a mat-list-item href="#">Services</a>
+    </mat-nav-list> -->
+
+</div>

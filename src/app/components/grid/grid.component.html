@@ -1,0 +1,88 @@
+<!-- Grids -->
+<div>
+    <mat-grid-list cols="2" rowHeight="fit" style="height: 200px" gutterSize="10px">
+        <mat-grid-tile>Title 1</mat-grid-tile>
+        <mat-grid-tile>Title 2</mat-grid-tile>
+        <mat-grid-tile>Title 3</mat-grid-tile>
+        <mat-grid-tile>Title 4</mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+
+<!-- Expansion -->
+<div>
+    <mat-accordion multi="true" hideToggle>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Fundamentals
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total Duration : 3 hours
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the panel content. Add course details.</p>
+            <mat-action-row>
+                <button mat-button>Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Material
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total Duration : 2 hours
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the panel content. Add course details.</p>
+            <mat-action-row>
+                <button mat-button>Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<br>
+
+<!-- Cards -->
+<div>
+    <mat-card>
+       <mat-card-title>
+           Card title
+       </mat-card-title>
+       <mat-card-content>
+           this is the content
+       </mat-card-content>
+       <mat-card-actions align="end">
+           <button mat-flat-button>Login</button>
+       </mat-card-actions>
+    </mat-card>
+</div>
+
+<!-- tab -->
+<!-- <div>
+    <mat-tab-group #tabRef (selectedIndexChange)="logchang(tabRef.selectedIndex)">
+        <mat-tab label="Angular">Angular Content</mat-tab>
+        <mat-tab label="React">React Content</mat-tab>
+        <mat-tab label="Vue">Vue Content</mat-tab>
+    </mat-tab-group>
+    {{tabRef.selectedIndex}}
+</div> -->
+
+<!-- stepper -->
+<mat-horizontal-stepper linear>
+    <mat-step label="Shipping Address" completed="true">
+        <p>Shiooing Address Details</p>
+    </mat-step>
+    <mat-step label="Billing Address" completed="false" optional>
+        <p>Billing Address Details</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step label="Place Order" completed="false">
+        <p>Place Address Details</p>
+    </mat-step>
+</mat-horizontal-stepper>

@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularMaterial';
+  showSpiner = false;
+  opened = false;
+
+  loadData() {
+    this.showSpiner = true;
+    setTimeout(()=>{
+      this.showSpiner = false;
+    },5000);
+  }
+  log(state) {
+    console.log(state)
+  }
 }
